@@ -216,7 +216,7 @@ open class MTCircularSlider: UIControl {
 		didSet { setNeedsDisplay() }
 	}
 
-	override init(frame: CGRect) {
+	override public init(frame: CGRect) {
 		super.init(frame: frame)
 
 		prepare()
@@ -500,6 +500,13 @@ fileprivate extension MTCircularSlider {
 
         minTrackTint.setFill()
         progressPath.fill()
+        
+        let startPoint = convert(CGPoint(x: self.frame.midX, y: self.frame.maxY - (trackWidth / 2) - 1), from: superview)
+        let circlePath = getCirclePath(withCenter: startPoint, radius: trackWidth / 2)
+        circlePath.fill()
+        
+        let thumbPath = getCirclePath(withCenter: thumbCenter, radius: thumbRadius)
+        thumbPath.fill()
     }
 
     func drawTrack(_ context: CGContext) {
