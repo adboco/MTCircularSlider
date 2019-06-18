@@ -30,7 +30,7 @@ This widget tries to conform to UISlider both in naming and default style.
   s.social_media_url = 'https://www.linkedin.com/in/eranboudjnah/'
 
   s.ios.deployment_target = '12.2'
-  s.swift_versions = '5.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'MTCircularSlider/Classes/**/*'
   
