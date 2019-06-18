@@ -501,11 +501,11 @@ fileprivate extension MTCircularSlider {
         minTrackTint.setFill()
         progressPath.fill()
         
-        let startPoint = convert(CGPoint(x: self.frame.midX, y: self.frame.maxY - (trackWidth / 2) - 1), from: superview)
+        let startPoint = convert(CGPoint(x: self.frame.midX, y: self.frame.maxY - (trackWidth / 2)), from: superview)
         let circlePath = getCirclePath(withCenter: startPoint, radius: trackWidth / 2)
         circlePath.fill()
         
-        let thumbPath = getCirclePath(withCenter: thumbCenter, radius: thumbRadius)
+        let thumbPath = getCirclePath(withCenter: thumbCenter, radius: trackWidth / 2)
         thumbPath.fill()
     }
 
